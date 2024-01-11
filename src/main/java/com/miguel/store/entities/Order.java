@@ -86,6 +86,13 @@ public class Order implements Serializable {
     public Set<OrderItem> getItems() {
         return items;
     }
+    public Double getTotal(){
+        double som = 0;
+        for(OrderItem x: items){
+            som = som + x.getSubtotal();
+        }
+        return som;
+    }
 
     @Override
     public boolean equals(Object o) {
